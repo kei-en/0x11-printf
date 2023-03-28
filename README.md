@@ -1,1 +1,1 @@
-This project is an implimentation of the printf function using C
+This project is an implimentation (partial) of the printf function using C
