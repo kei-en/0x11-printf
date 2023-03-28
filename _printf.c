@@ -21,13 +21,9 @@ int _printf(const char *format, ...)
 	for (p = format; *p != '\0'; p++)
 	{
 		if (*p != '%')
-		{
 			_putchar(*p, &k);
 			continue;
-		}
-
 		p++;
-
 		switch (*(p))
 		{
 			case 'c':
@@ -44,10 +40,8 @@ int _printf(const char *format, ...)
 			case 'd':
 				d = va_arg(args, int);
 				if (d < 0)
-				{
 					d = -d;
 					_putchar('-', &k);
-				}
 				print_number(d, &k);
 				break;
 			case 'i':
