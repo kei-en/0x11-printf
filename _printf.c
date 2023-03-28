@@ -10,7 +10,7 @@ int _printf(const char *format, ...)
 {
 	va_list args;
 	const char *p;
-	int k = 0;
+	int d, k = 0;
 	unsigned int i;
 	char *s;
 
@@ -40,6 +40,19 @@ int _printf(const char *format, ...)
 				break;
 			case '%':
 				_putchar('%', &k);
+				break;
+			case 'd':
+				d = va_arg(args, int);
+				if (d < 0)
+				{
+					d = -d;
+					_putchar('-', &k);
+				}
+				print_number(d, &k);
+				break;
+			case 'i':
+				d = va_arg(args, int);
+				print_number(d, &k);
 				break;
 		}
 	}
